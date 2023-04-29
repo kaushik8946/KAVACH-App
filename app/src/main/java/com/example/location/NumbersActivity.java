@@ -72,12 +72,16 @@ public class NumbersActivity extends AppCompatActivity {
     public void displayNumbers(View view){
         display = findViewById(R.id.ShowNumbers);
         display.setText("");
-        display.append("--Available numbers--");
-        for (String x:
-             numberList1) {
-            display.append("  \n"+x);
+        if(numberList1.size()==0) {
+            display.append("--No available numbers--");
+        }
+        else{
+            display.append("--Available numbers--");
+            for (String x:
+                    numberList1) {
+                display.append("  \n"+x);
+            }
         }
         //System.out.println(numberList1);
-
     }
 }
